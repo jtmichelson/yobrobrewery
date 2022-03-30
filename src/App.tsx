@@ -18,10 +18,6 @@ const AppHeader = css({
   color: "white"
 })
 
-const AppLink = css({
-  color: "#09d3ac"
-})
-
 const FlexRow = css({
   display: "flex",
   alignItems: "center",
