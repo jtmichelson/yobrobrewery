@@ -59,14 +59,6 @@ const App: React.FC = () => {
         <p>
           <code>Yo Bro!</code>
         </p>
-        <a
-          css={AppLink}
-          href="https://www.linkedin.com/in/jasonmichelson/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
       </header>
     </div>
   );

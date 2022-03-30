@@ -142,7 +142,7 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
             <UserButton isLoggedIn={this.state.user.id === -1 ? false : true} />
 
             <a
-              href="https://github.com/EliEladElrom/react-tutorials"
+              href="https://github.com/jtmichelson/yobrobrewery"
               target="_blank"
               rel="noopener noreferrer"
             >
