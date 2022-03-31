@@ -1,12 +1,11 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom'
 
 export default class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundPageState> {
 
   constructor(props: INotFoundPageProps) {
     super(props);
     this.state = {
-      name: this.props.history.location.pathname.substring(1, this.props.history.location.pathname.length)
+      name: "notFoundPage"
     }
   }
   componentWillMount() {
@@ -26,7 +25,7 @@ export default class NotFoundPage extends React.Component<INotFoundPageProps, IN
   }
 }
 
-interface INotFoundPageProps extends RouteComponentProps<{ name: string }> {
+interface INotFoundPageProps {
   // TODO
 }
 

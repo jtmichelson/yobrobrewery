@@ -8,7 +8,7 @@ import SubMenu1Page from './pages/SubMenu1Page'
 import SubMenu2Page from './pages/SubMenu2Page'
 import NotFoundPage from './pages/NotFoundPage'
 
-import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom'
 
 // redux toolkit
 import { Provider } from 'react-redux'
@@ -26,14 +26,14 @@ const routing = (
         <Provider store={store}>
             <Header user={store.getState().authentication.user} />
             <div className="page">
-                <Switch>
-                    <Route exact path="/" component={App} />
-                    <Route exact path="/Articles" component={SubMenu1Page} />
-                    <Route exact path="/Articles/DependencyInjectionIntro" component={SubMenu1Page} />
-                    <Route exact path="/SubMenu2" component={SubMenu2Page} />
-                    <Route path="/404" component={NotFoundPage} />
-                    <Redirect to="/404" />
-                </Switch>
+                <Routes>
+                    <Route path="/" element={<App/>} />
+                    <Route path="/Articles" element={<SubMenu1Page/>} />
+                    <Route path="/Articles/DependencyInjectionIntro" element={<SubMenu1Page/>} />
+                    <Route path="/SubMenu2" element={<SubMenu2Page/>} />
+                    <Route path="/404" element={<NotFoundPage/>} />
+                    <Route path="*" element={<Navigate to="/404" />}/>
+                </Routes>
             </div>
         </Provider>
     </Router>

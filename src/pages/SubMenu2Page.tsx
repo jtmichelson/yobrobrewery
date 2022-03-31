@@ -1,12 +1,11 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom'
 
 export default class SubMenu2Page extends React.Component<ISubMenu2PageProps, ISubMenu2PageState> {
 
   constructor(props: ISubMenu2PageProps) {
     super(props);
     this.state = {
-      name: this.props.history.location.pathname.substring(1, this.props.history.location.pathname.length)
+      name: "subMenuPage2"
     }
   }
   componentWillMount() {
@@ -26,7 +25,7 @@ export default class SubMenu2Page extends React.Component<ISubMenu2PageProps, IS
   }
 }
 
-interface ISubMenu2PageProps extends RouteComponentProps<{ name: string }> {
+interface ISubMenu2PageProps {
   // TODO
 }
 

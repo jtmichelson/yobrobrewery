@@ -133,7 +133,7 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                 { name: 'DI Intro', url: '/Articles/DependencyInjectionIntro' },
                 { name: 'SubMenu2', url: '/SubMenu2' },
               ].map((itemObject, index) => (
-                  <NavLink exact to={itemObject.url} className="NavLinkItem">
+                  <NavLink to={itemObject.url} className="NavLinkItem">
                     <MenuItem onClick={this.handleMenuClose}>{itemObject.name}</MenuItem>
                   </NavLink>
               ))}
@@ -172,14 +172,15 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
 
               <List>
                 {[
-                  { name: 'SubMenu1', url: '/SubMenu1' },
+                  { name: 'SubMenu1', url: '/Articles' },
                   { name: 'SubMenu2', url: '/SubMenu2' },
                 ].map((itemObject, index) => (
                   <NavLink
                       to={itemObject.url}
-                      className="NavLinkItem"
+                      className={({ isActive }) => { 
+                        return isActive ? "NavLinkItem-selected" : "NavLinkItem" 
+                      }}
                       key={itemObject.url}
-                      activeClassName="NavLinkItem-selected"
                   >
                     <ListItem button key={itemObject.name} onClick={this.handleListItemClick}>
                       <ListItemIcon>{index % 2 === 0 ? <WebIcon /> : <WebAssetIcon />}</ListItemIcon>
