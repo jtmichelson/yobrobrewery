@@ -51,16 +51,6 @@ const DetectHover = styled.div`
   }
 `;
 
-const Nav = styled.nav`
-  width: 3000px;
-  @media screen and (min-width: 0px) and (max-width: 400px) {
-    display: block;
-  }
-  @media screen and (min-width: 401px) and (max-width: 1024px) {
-    display: none;
-  }
-`;
-
 export default class Header extends React.Component<
   IHeaderProps,
   IHeaderState
