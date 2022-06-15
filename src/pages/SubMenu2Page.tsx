@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 
-export default class SubMenu2Page extends React.Component<ISubMenu2PageProps, ISubMenu2PageState> {
-
+export default class SubMenu2Page extends React.Component<
+  ISubMenu2PageProps,
+  ISubMenu2PageState
+> {
   constructor(props: ISubMenu2PageProps) {
     super(props);
     this.state = {
-      name: "subMenuPage2"
-    }
+      name: "subMenuPage2",
+    };
   }
   componentWillMount() {
     // TODO
@@ -18,10 +20,7 @@ export default class SubMenu2Page extends React.Component<ISubMenu2PageProps, IS
     // TODO
   }
   render() {
-    return (
-      <div className="SubMenu2Page">
-        {this.state.name} Component
-      </div>);
+    return <div className="SubMenu2Page">{this.state.name} Component</div>;
   }
 }
 
@@ -30,5 +29,5 @@ interface ISubMenu2PageProps {
 }
 
 interface ISubMenu2PageState {
-  name: string
+  name: string;
 }

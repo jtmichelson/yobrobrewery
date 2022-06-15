@@ -1,63 +1,69 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 
-import React from 'react';
-import { jsx, css, keyframes } from '@emotion/react'
+import React from "react";
+import { jsx, css, keyframes } from "@emotion/react";
+import styled from "styled-components";
 
-const AppStyle = css({
-  textAlign: "center"
-})
+const AppStyle = styled.div`
+  text-align: center;
+`;
 
-const AppHeader = css({
-  backgroundColor: "#282c34",
-  minHeight: "100vh",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  fontSize: "calc(10px + 2vmin)",
-  color: "white"
-})
+const AppHeader = styled.header`
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
 
-const FlexRow = css({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center"
-})
+const FlexRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const rotation = keyframes({
-  'from': {
-    transform: 'rotate(0deg)'
+  from: {
+    transform: "rotate(0deg)",
   },
-  'to': {
-    transform: 'rotate(359deg)'
-  }
-})
+  to: {
+    transform: "rotate(359deg)",
+  },
+});
 
 const ImageStyles = css({
   width: "10rem",
   height: "10rem",
   marginLeft: "1rem",
-  marginRight: "1rem"
-})
+  marginRight: "1rem",
+});
 
 const Rotating = css({
-  animation: `${rotation} 10s infinite linear`
-})
+  animation: `${rotation} 10s infinite linear`,
+});
 
 const App: React.FC = () => {
   return (
-    <div css={AppStyle}>
-      <header css={AppHeader}>
-        <div css={FlexRow}>
-          <img css={[ImageStyles, Rotating]} id="beerLogo" src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Emoji_u1f37b.svg" alt="Yo Bro Brewery Logo" />
-        </div>
-        <div css={FlexRow}>
+    <AppStyle>
+      <AppHeader>
+        <FlexRow>
+          <img
+            css={[ImageStyles, Rotating]}
+            id="beerLogo"
+            src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Emoji_u1f37b.svg"
+            alt="Yo Bro Brewery Logo"
+          />
+        </FlexRow>
+        <FlexRow>
           <code>Yo Bro!</code>
-        </div>
-      </header>
-    </div>
+        </FlexRow>
+      </AppHeader>
+    </AppStyle>
   );
-}
+};
 
 export default App;

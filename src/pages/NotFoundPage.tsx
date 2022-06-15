@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 
-export default class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundPageState> {
-
+export default class NotFoundPage extends React.Component<
+  INotFoundPageProps,
+  INotFoundPageState
+> {
   constructor(props: INotFoundPageProps) {
     super(props);
     this.state = {
-      name: "notFoundPage"
-    }
+      name: "notFoundPage",
+    };
   }
   componentWillMount() {
     // TODO
@@ -18,10 +20,7 @@ export default class NotFoundPage extends React.Component<INotFoundPageProps, IN
     // TODO
   }
   render() {
-    return (
-      <div className="NotFoundPage">
-        {this.state.name} Component
-      </div>);
+    return <div className="NotFoundPage">{this.state.name} Component</div>;
   }
 }
 
@@ -30,5 +29,5 @@ interface INotFoundPageProps {
 }
 
 interface INotFoundPageState {
-  name: string
+  name: string;
 }
