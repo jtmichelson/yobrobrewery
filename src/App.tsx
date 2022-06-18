@@ -51,6 +51,9 @@ const App: React.FC = () => {
     <AppStyle>
       <AppHeader>
         <FlexRow>
+          <h1>Yo Bro Brewery</h1>
+        </FlexRow>
+        <FlexRow>
           <img
             css={[ImageStyles, Rotating]}
             id="beerLogo"

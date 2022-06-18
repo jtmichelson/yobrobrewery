@@ -14,16 +14,15 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import MenuIcon from "@mui/icons-material/Menu";
-import WebIcon from "@mui/icons-material/Web";
-import WebAssetIcon from "@mui/icons-material/WebAsset";
 import IconButton from "@mui/material/IconButton";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-
-import { UserListButton } from "../components/UserButtonList";
+import HomeIcon from "@mui/icons-material/Home";
+import SportsBarIcon from "@mui/icons-material/SportsBar";
+import GroupsIcon from "@mui/icons-material/Groups";
 
 // router
 import { NavLink } from "react-router-dom";
@@ -165,33 +164,44 @@ export default class Header extends React.Component<
               open={this.state.toggleMenuFlag}
               onClose={this.handleToggle}
             >
-              <a href="https://www.yobrobrewery.com">
-                <UserListButton
-                  isLoggedIn={this.state.user.id === -1 ? false : true}
-                />
-              </a>
+              <NavLink
+                to={"/"}
+                className={({ isActive }) => {
+                  return isActive ? "NavLinkItem-selected" : "NavLinkItem";
+                }}
+                key={"/"}
+              >
+                <ListItem
+                  button
+                  key={"Home"}
+                  onClick={this.handleListItemClick}
+                >
+                  <ListItemIcon>
+                    <HomeIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Home"} />
+                </ListItem>
+              </NavLink>
               <Divider />
               <List>
                 {[
-                  { name: "SubMenu1", url: "/Articles" },
-                  { name: "SubMenu2", url: "/SubMenu2" },
-                ].map((itemObject, index) => (
+                  { name: "Beer", url: "/beer", icon: <SportsBarIcon /> },
+                  { name: "About Us", url: "/about-us", icon: <GroupsIcon /> },
+                ].map((navLinkItem, index) => (
                   <NavLink
-                    to={itemObject.url}
+                    to={navLinkItem.url}
                     className={({ isActive }) => {
                       return isActive ? "NavLinkItem-selected" : "NavLinkItem";
                     }}
-                    key={itemObject.url}
+                    key={navLinkItem.url}
                   >
                     <ListItem
                       button
-                      key={itemObject.name}
+                      key={navLinkItem.name}
                       onClick={this.handleListItemClick}
                     >
-                      <ListItemIcon>
-                        {index % 2 === 0 ? <WebIcon /> : <WebAssetIcon />}
-                      </ListItemIcon>
-                      <ListItemText primary={itemObject.name} />
+                      <ListItemIcon>{navLinkItem.icon}</ListItemIcon>
+                      <ListItemText primary={navLinkItem.name} />
                     </ListItem>
                   </NavLink>
                 ))}

@@ -4,8 +4,8 @@ import Header from "./layout/Header";
 import * as serviceWorker from "./serviceWorker";
 
 import App from "./App";
-import SubMenu1Page from "./pages/SubMenu1Page";
-import SubMenu2Page from "./pages/SubMenu2Page";
+import BeerPage from "./pages/BeerPage";
+import AboutUsPage from "./pages/AboutUsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 import {
@@ -32,12 +32,8 @@ const routing = (
       <div className="page">
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/Articles" element={<SubMenu1Page />} />
-          <Route
-            path="/Articles/DependencyInjectionIntro"
-            element={<SubMenu1Page />}
-          />
-          <Route path="/SubMenu2" element={<SubMenu2Page />} />
+          <Route path="/beer" element={<BeerPage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="*" element={<Navigate to="/404" />} />
         </Routes>
