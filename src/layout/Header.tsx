@@ -31,7 +31,7 @@ import { NavLink } from "react-router-dom";
 import { userState } from "../features/authentication/authenticationSlice";
 
 const HeaderContainer = css({
-  background: "rgba(148, 148, 148,0.8)",
+  background: "rgba(255, 0, 0, 0.6)",
   position: "fixed",
 });
 
@@ -63,15 +63,6 @@ export default class Header extends React.Component<
       menuBuildItem1Flag: false,
     };
     this.handleToggle = this.handleToggle.bind(this);
-  }
-  componentWillMount() {
-    // TODO
-  }
-  componentDidUpdate() {
-    // TODO
-  }
-  componentWillUpdate() {
-    // TODO
   }
   handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
     this.setState({

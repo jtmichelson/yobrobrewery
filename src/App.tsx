@@ -4,6 +4,7 @@
 import React from "react";
 import { jsx, css, keyframes } from "@emotion/react";
 import styled from "styled-components";
+import { HeaderWhitespace } from "./styles/sharedStyles";
 
 const AppStyle = styled.div`
   text-align: center;
@@ -49,6 +50,7 @@ const Rotating = css({
 const App: React.FC = () => {
   return (
     <AppStyle>
+      <HeaderWhitespace />
       <AppHeader>
         <FlexRow>
           <h1>Yo Bro Brewery</h1>

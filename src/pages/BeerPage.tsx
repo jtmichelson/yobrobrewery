@@ -4,6 +4,7 @@
 import React from "react";
 import { jsx, css, keyframes } from "@emotion/react";
 import styled from "styled-components";
+import { HeaderWhitespace } from "../styles/sharedStyles";
 
 const BeerPageStyle = styled.div`
   text-align: center;
@@ -59,6 +60,7 @@ export default class BeerPage extends React.Component<
   render() {
     return (
       <BeerPageStyle>
+        <HeaderWhitespace />
         <AppHeader>
           <FlexRow>
             <h1>Our beer selection</h1>

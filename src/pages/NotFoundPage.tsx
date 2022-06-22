@@ -10,15 +10,6 @@ export default class NotFoundPage extends React.Component<
       name: "notFoundPage",
     };
   }
-  componentWillMount() {
-    // TODO
-  }
-  componentDidUpdate() {
-    // TODO
-  }
-  componentWillUpdate() {
-    // TODO
-  }
   render() {
     return <div className="NotFoundPage">{this.state.name} Component</div>;
   }

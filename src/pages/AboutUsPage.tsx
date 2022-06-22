@@ -6,6 +6,7 @@ import { jsx, css, keyframes } from "@emotion/react";
 
 import styled from "styled-components";
 import PersonIcon from "@mui/icons-material/Person";
+import { HeaderWhitespace } from "../styles/sharedStyles";
 
 const AboutUsPageStyle = styled.div`
   text-align: center;
@@ -61,6 +62,7 @@ export default class AboutUsPage extends React.Component<
   render() {
     return (
       <AboutUsPageStyle>
+        <HeaderWhitespace />
         <AppHeader>
           <FlexRow>
             <h1>About Us</h1>
