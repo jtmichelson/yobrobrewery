@@ -35,6 +35,11 @@ const HeaderContainer = css({
   position: "fixed",
 });
 
+const ImageStyles = css({
+  width: "8rem",
+  height: "8rem",
+});
+
 const HamburgerMenu = styled.div`
   position: absolute;
   right: 1.5rem;
@@ -93,8 +98,9 @@ export default class Header extends React.Component<
         <Toolbar>
           <div>
             <img
+              css={ImageStyles}
               id="beerLogo"
-              src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Emoji_u1f37b.svg"
+              src="yb_brewery_logo.svg"
               alt="Yo Bro Brewery Logo"
             />
           </div>

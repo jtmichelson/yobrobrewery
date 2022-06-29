@@ -2,7 +2,7 @@
 /** @jsx jsx */
 
 import React from "react";
-import { jsx, css, keyframes } from "@emotion/react";
+import { jsx, css } from "@emotion/react";
 import styled from "styled-components";
 import { HeaderWhitespace } from "./styles/sharedStyles";
 
@@ -27,24 +27,9 @@ const FlexRow = styled.div`
   justify-content: center;
 `;
 
-const rotation = keyframes({
-  from: {
-    transform: "rotate(0deg)",
-  },
-  to: {
-    transform: "rotate(359deg)",
-  },
-});
-
 const ImageStyles = css({
-  width: "10rem",
-  height: "10rem",
-  marginLeft: "1rem",
-  marginRight: "1rem",
-});
-
-const Rotating = css({
-  animation: `${rotation} 10s infinite linear`,
+  width: "20rem",
+  height: "25rem",
 });
 
 const App: React.FC = () => {
@@ -53,20 +38,55 @@ const App: React.FC = () => {
       <HeaderWhitespace />
       <AppHeader>
         <FlexRow>
-          <h1>Yo Bro Brewery</h1>
-        </FlexRow>
-        <FlexRow>
           <img
-            css={[ImageStyles, Rotating]}
-            id="beerLogo"
-            src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Emoji_u1f37b.svg"
-            alt="Yo Bro Brewery Logo"
+            css={ImageStyles}
+            id="beerFirstKegPour"
+            src="yb_brewery_text.svg"
+            alt="Yo Bro Brewery First Keg Tap Pour"
           />
         </FlexRow>
         <FlexRow>
-          <code>Yo Bro!</code>
+          <img
+            css={ImageStyles}
+            id="beerFirstKegPour"
+            src="yb_beer_pour.png"
+            alt="Yo Bro Brewery First Keg Tap Pour"
+          />
+          <img
+            css={ImageStyles}
+            id="beerFirstKegGlass"
+            src="yb_beer_glass.png"
+            alt="Yo Bro Brewery First Keg Tap Glass"
+          />
+          <img
+            css={ImageStyles}
+            id="beerKegs"
+            src="yb_kegs.png"
+            alt="Yo Bro Brewery First Set of Kegs"
+          />
+        </FlexRow>
+        <FlexRow>
+          <img
+            css={ImageStyles}
+            id="beerFermentor"
+            src="yb_fermentor.png"
+            alt="Yo Bro Brewery Primary Fermentor"
+          />
+          <img
+            css={ImageStyles}
+            id="beerBottles"
+            src="yb_brews.png"
+            alt="Yo Bro Brewery First Set of Bottles"
+          />
+          <img
+            css={ImageStyles}
+            id="beerFirstEverBottle"
+            src="yb_first_beer.png"
+            alt="Yo Bro Brewery First Ever Beer"
+          />
         </FlexRow>
       </AppHeader>
+      <HeaderWhitespace />
     </AppStyle>
   );
 };
