@@ -30,6 +30,7 @@ const FlexRow = styled.div`
 
 const ImageStyles = css({
   width: "20rem",
+  maxWidth: "80%",
   height: "25rem",
 });
 
